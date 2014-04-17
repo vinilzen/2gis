@@ -12,19 +12,23 @@
 }
 #searchResults #doctorList.doc-list {
 	border-bottom: 0;
+	width: 100%;
 }
 #top-header {
 	padding-top: 10px;
 }
 #top-header span {
 	color: #302A7A;
-	font-size: 22px;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	height: 19px;
+	line-height: 1em;
 }
 
 .logo-sm {
 	float: right;
-	margin-top: 10px;
+	margin-top: 0px;
 	margin-right: 15px;
 }
 .doc-form label {
