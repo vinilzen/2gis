@@ -12,49 +12,61 @@
                     <div class="">
                         <form role="form">
 							<div class="doc-form">
-								<h4 class="first">Введите ваши контактные данные</h4>
-								
-								<div class="form-group">
-                                    <input type="hidden" name="workerId" value="">
-                                    <input type="hidden" name="orderTime" id="orderTime" value="">
-                                    <input type="hidden" name="orderDate" id="orderDate" value="">
-                                    <a href="#" class="addOrderTime">Выбрать предпочитаемое время</a>
-                                </div>
-								<div class="form-group" id="orderScheld">
-                                    <input type="text" id="orderDaeTime" value="" />
-                                </div>
+                                
+                                <div class="doc-left-form">
                                     
-								<div class="form-group">
-									<label for="userName">ФИО <span class="error">Неполные данные</span></label>
-									<input name="fio" type="text" class="form-control" id="userName" placeholder="">
-								</div>
-								<div class="form-group">
-									<label for="userInputEmail1">Эл. почта</label>
-									<input name="email" type="email" class="form-control" id="userInputEmail1" placeholder="">
-								</div>
-								<div class="form-group">
-									<a href="#" class="addComment">Добавить комментарий</a>
-									<label class="checkbox" style="float: right; margin-top: 0;"><input name="isChild" value="1" type="checkbox" id="ageChild"/>Для ребенка</label>
-								</div>
-								<div class="form-group"  id="patientComment">
-									<div>
-										<textarea name="commentOrder" rows="2" class="form-control" ></textarea>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<label for="userTel">Телефон <span class="error">Неправильно заполнено поле</span></label>
-									<input name="phone" type="text" class="form-control" id="userTel" placeholder="">
-									<div class="help">На него придет код подтверждения</div>
-								</div>						
-							</div>
-							<div class="ajax-sms continueBlock">
-								<div class="info smsCodeBlock">На ваш номер было выслано SMS с кодом. Если код не пришел в течение 2-х минут, вы можете <span class="getCodeText">запросить новый код</span><a href="#" class="getCodeLink">запросить новый код</a>.</div>
-								<div class="form-group">
-									<label for="userSms" class="smsCodeBlock">Введите код смс</label><br>
-									<input name="code" type="text" class="form-control codeInput" id="userSms" placeholder="" value="">
-									<button class="btn btn-success" name="continueBookingBtn">Записаться онлайн</button>
-								</div>
+
+                                    <div class="form-group">
+                                        <label for="userName">ФИО <span class="error">Неполные данные</span></label>
+                                        <input name="fio" type="text" class="form-control" id="userName" placeholder="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="hidden" name="workerId" value="">
+                                        <input type="hidden" name="orderTime" id="orderTime" value="">
+                                        <input type="hidden" name="orderDate" id="orderDate" value="">
+                                        <a href="#" class="addOrderTime">Выбрать предпочитаемое время</a>
+                                    </div>
+
+                                    <div class="form-group" id="orderScheld">
+                                        <input type="text" id="orderDaeTime" value="" />
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="userInputEmail1">Эл. почта</label>
+                                        <input name="email" type="email" class="form-control" id="userInputEmail1" placeholder="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <a href="#" class="addComment">Добавить комментарий</a>
+                                        <label class="checkbox" style="float: right; margin-top: 0;"><input name="isChild" value="1" type="checkbox" id="ageChild"/>Для ребенка</label>
+                                    </div>
+
+                                    <div class="form-group"  id="patientComment">
+                                        <div>
+                                            <textarea name="commentOrder" rows="2" class="form-control" ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="doc-right-form">
+                                
+                                    <div class="form-group">
+                                        <label for="userTel">Телефон <span class="error">Неправильно заполнено поле</span></label>
+                                        <input name="phone" type="text" class="form-control" id="userTel" placeholder="">
+                                        <div class="help">На него придет код подтверждения</div>
+                                    </div>
+
+                                    <div class="ajax-sms continueBlock">
+                                        <div class="form-group">
+                                            <label for="userSms" class="smsCodeBlock">Введите код смс</label><br>
+                                            <input name="code" type="text" class="form-control codeInput" id="userSms" placeholder="" value="">
+                                            <button class="btn btn-success" name="continueBookingBtn">Записаться онлайн</button>
+                                        </div>
+                                        <div class="info smsCodeBlock">На ваш номер было выслано SMS с кодом. Если код не пришел в течение 2-х минут, вы можете <span class="getCodeText">запросить новый код</span><a href="#" class="getCodeLink">запросить новый код</a>.</div>
+                                    </div>
+
+                                </div>
 							</div>
 							
 							<div class="ajax-final successBlock">
