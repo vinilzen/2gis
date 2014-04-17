@@ -114,9 +114,13 @@
 }
 .doc-form .doc-right-form .ajax-sms.continueBlock {
 	text-align: right;
+	padding-left: 20px;
+}
+.doc-form .doc-right-form .ajax-sms.continueBlock .form-group {
+	padding-left: 0;
 }
 .doc-form .doc-right-form .ajax-sms.continueBlock .smsCodeBlock{
-	padding-left: 20px;
+	/*padding-left: 20px;*/
 }
 
 .doc-form .doc-right-form .successBlock{
@@ -143,4 +147,16 @@
 
 #doctorList #docModal .modal-body {
 	padding: 20px 10px;
+}
+
+.doc-form .ajax-sms label {
+	width: 100%;
+	text-align: left; 
+}
+.doc-form .ajax-sms .form-control {
+	width: 180px;
+	margin-right: 10px;
+	top: 2px;
+	display: inline-block;
+	position: relative;
 }
