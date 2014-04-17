@@ -2,7 +2,7 @@
 	background-color: #fff;
 }
 
-.doc-form, #docModal {
+body, .doc-form, #docModal {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #555;
 	font-size: 13px;
@@ -91,6 +91,7 @@
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #FFF;
+	width: 112px;
 }
 .ajax-sms.continueBlock .btn.btn-success:hover {
 	border-color: #10BE50;
@@ -120,7 +121,7 @@
 	padding-left: 0;
 }
 .doc-form .doc-right-form .ajax-sms.continueBlock .smsCodeBlock{
-	/*padding-left: 20px;*/
+	text-align: left;
 }
 
 .doc-form .doc-right-form .successBlock{
