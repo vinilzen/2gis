@@ -1,10 +1,20 @@
+#searchResults {
+	background-color: #fff;
+}
+
 .doc-form, #docModal {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color: #555;
 	font-size: 13px;
 }
+#searchResults {
+	height: 100%;
+}
 #searchResults #doctorList.doc-list {
 	border-bottom: 0;
+}
+#top-header {
+	padding-top: 10px;
 }
 #top-header span {
 	color: #302A7A;
@@ -27,6 +37,7 @@
 }
 .doc-form label .error {
 	color: #F00;
+	display: none;
 }
 
 .doc-form .help {

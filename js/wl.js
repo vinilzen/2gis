@@ -99,7 +99,7 @@ jQuery(function() {
            
             $("#docModal").hide();
             $("#docModal").show(100);
-            $(".container").mCustomScrollbar("scrollTo", toPos);
+            $("#doctorList").mCustomScrollbar("scrollTo", toPos);
         }
         //$("#docModal").jqmShow();
         return false;
@@ -233,13 +233,13 @@ jQuery(function() {
 
 //var set_data;
     function set_scroling(){
-        $(".container").mCustomScrollbar({
+        $("#doctorList").mCustomScrollbar({
             advanced: {
                 updateOnContentResize: true,
                 autoScrollOnFocus: true
             },
             contentTouchScroll: true,
-            set_height: 520,
+            set_height: 440,
             theme: "dark-thick",
             scrollInertia: 500,
             mouseWheelPixels: 280

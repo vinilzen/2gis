@@ -9,10 +9,11 @@
          data-clinicurl="${ $item.data.clinicurl }"
          data-cliniclogo="${ $item.data.cliniclogo }">
         <div class="col-xs-5 doc-name">
+            <a>
                 <img class="avatar" src="http://doctu.ru/${ $item.data.photo }" width="74"/>
                 <h3>{%html $item.data.nameFamily %}</h3>
                 <h4>{%html $item.data.nameFirst %} {%html $item.data.nameFathers %}</h4>
-                
+             </a>
             <div class="rank_dn">
                 <div class="rating">${ $item.data.rating }</div>
                 <div class="star-rating">{%html get_rating_stars($item.data.rating) %}</div>
