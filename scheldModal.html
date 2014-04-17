@@ -1,0 +1,133 @@
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+<script src="js/jquery.datetimepicker.js"></script>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="">
+                        <!--<div class="doc-promo">
+                            <h3>Запись абсолютно бесплатна!</h3>
+                            <p>Администратор клиники свяжется с вами для подтверждения даты и времени приема выбранного специалиста. Контактные данные не передаются третьим лицам.</p>
+                        </div>-->
+                    </div>
+                    <div class="">
+                        <form role="form">
+							<div class="doc-form">
+								<h4 class="first">Введите ваши контактные данные</h4>
+								
+								<div class="form-group">
+                                    <input type="hidden" name="workerId" value="">
+                                    <input type="hidden" name="orderTime" id="orderTime" value="">
+                                    <input type="hidden" name="orderDate" id="orderDate" value="">
+                                    <a href="#" class="addOrderTime">Выбрать предпочитаемое время</a>
+                                </div>
+								<div class="form-group" id="orderScheld">
+                                    <input type="text" id="orderDaeTime" value="" />
+                                </div>
+                                    
+								<div class="form-group">
+									<label for="userName">ФИО <span class="error">Неполные данные</span></label>
+									<input name="fio" type="text" class="form-control" id="userName" placeholder="">
+								</div>
+								<div class="form-group">
+									<label for="userInputEmail1">Эл. почта</label>
+									<input name="email" type="email" class="form-control" id="userInputEmail1" placeholder="">
+								</div>
+								<div class="form-group">
+									<a href="#" class="addComment">Добавить комментарий</a>
+									<label class="checkbox" style="float: right; margin-top: 0;"><input name="isChild" value="1" type="checkbox" id="ageChild"/>Для ребенка</label>
+								</div>
+								<div class="form-group"  id="patientComment">
+									<div>
+										<textarea name="commentOrder" rows="2" class="form-control" ></textarea>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="userTel">Телефон <span class="error">Неправильно заполнено поле</span></label>
+									<input name="phone" type="text" class="form-control" id="userTel" placeholder="">
+									<div class="help">На него придет код подтверждения</div>
+								</div>						
+							</div>
+							<div class="ajax-sms continueBlock">
+								<div class="info smsCodeBlock">На ваш номер было выслано SMS с кодом. Если код не пришел в течение 2-х минут, вы можете <span class="getCodeText">запросить новый код</span><a href="#" class="getCodeLink">запросить новый код</a>.</div>
+								<div class="form-group">
+									<label for="userSms" class="smsCodeBlock">Введите код смс</label><br>
+									<input name="code" type="text" class="form-control codeInput" id="userSms" placeholder="" value="">
+									<button class="btn btn-success" name="continueBookingBtn">Записаться онлайн</button>
+								</div>
+							</div>
+							
+							<div class="ajax-final successBlock">
+								<p class="infoMsg">Уважаемая Иванова Лидия Сергеевна, в течение 10 минут с вами свяжется администратор клиники для подтверждения даты и времени приема выбранного специалиста.</p>
+								<p class="noteMsg">Мы знаем, что у вас есть выбор. Спасибо, что выбрали нас! Команда Doctu.ru</p>
+							</div>
+						</form>
+                    </div>
+                </div>
+            </div>
+                <script>
+                    $("#orderScheld").hide();
+                    $(".addOrderTime").click(function() {
+                        if (!$("#orderScheld").is(":visible")) {
+                            doc_uid = $(this).prevAll("input[name=workerId]").val();
+                            setSchelduer(doc_uid);
+                            $("#orderScheld").slideDown();
+                            $(".addOrderTime").html("Время не важно");
+                        } else {
+                            $("#orderScheld").hide();
+                            $("#orderScheld").slideUp();
+                            $(".addOrderTime").html("Выбрать предпочитаемое время");
+                        }
+
+                        return false;
+                     });
+                    
+                    function schld_doctor(data){
+                        this.data = data;
+                        this.days = Object.keys(this.data);
+                        this.countDays = 30;
+                        this.startDate = new Date().dateFormat("Y-m-d");
+                        this.time = function(date){
+                            filter_date = new Date(date).dateFormat("Y-m-d");
+                            return Object.keys(this.data[filter_date]);
+                        };        
+                    };
+                       
+                    function setSchelduer(doc_uid){
+                        $.get("http://test-doctu.ru/dispatch.php?act=schedule/doctorJSON&id="+doc_uid,function(data){
+                            schld=JSON.parse(data);
+                            v = new schld_doctor(schld);
+                            
+                            $('#orderDaeTime').datetimepicker({
+                                onGenerate: function(){
+                                    /*$(".xdsoft_calendar").find('.xdsoft_date.xdsoft_weekend').removeClass('xdsoft_weekend');*/
+                                    $(".xdsoft_calendar").find('.xdsoft_date:not(.xdsoft_weekend)').addClass('xdsoft_disabled');
+                                },
+                                onSelectDate: function(cd){
+                                    console.log(v.time(cd));
+                                    this.setOptions({
+                                        allowTimes: v.time(cd)
+                                    });
+                                    /*$(this).allowTimes: v.time(v.startDate);
+                                    console.log($(this).datetimepicker({
+                                        allowTimes: v.time(cd);
+                                    });*/
+                                },
+                                allowTimes: v.time(v.startDate),
+                                timepicker: true,
+                                lang:'ru',
+                                dayOfWeekStart: 1,
+                                weekends:v.days,
+                                inline:true
+                            });
+                            
+                            /*$(".xdsoft_calendar").find('.xdsoft_date.xdsoft_weekend').removeClass('xdsoft_weekend');*/
+                            /*$('#orderDaeTime').datetimepicker({
+                                onGenerate:function(){
+                                    $(".xdsoft_calendar").find('.xdsoft_date.xdsoft_weekend').removeClass('xdsoft_disabled');
+                                },
+                                weekends:v.days
+                            });*/
+                        });
+                    }
+                </script>

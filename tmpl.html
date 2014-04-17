@@ -1,0 +1,34 @@
+<section class="doc row" data-doctor="${ $item.data.doctorId }"
+         data-name="${ $item.data.name }"
+         data-family="${ $item.data.family }"
+         data-speciality="${ $item.data.speciality }"
+         data-photo="${ $item.data.photo }"
+         data-metro="${ $item.data.metro }"
+         data-address="${ $item.data.address }"
+         data-clinicphone="${ $item.data.clinicphone }"
+         data-clinicurl="${ $item.data.clinicurl }"
+         data-cliniclogo="${ $item.data.cliniclogo }">
+        <div class="col-xs-5 doc-name">
+                <img class="avatar" src="http://doctu.ru/${ $item.data.photo }" width="74"/>
+                <h3>{%html $item.data.nameFamily %}</h3>
+                <h4>{%html $item.data.nameFirst %} {%html $item.data.nameFathers %}</h4>
+                
+            <div class="rank_dn">
+                <div class="rating">${ $item.data.rating }</div>
+                <div class="star-rating">{%html get_rating_stars($item.data.rating) %}</div>
+            </div>
+            <div class="specialty">{%html $item.data.speciality %}</div>
+        </div>
+        <div class="col-xs-4 doc-options">
+            <div class="experience doc-option"><i class="green-ico ico-experience"></i>${ $item.data.experience }</div>
+            {%if $item.data.priceLevelText %}
+                <div class="consult doc-option"><i class="green-ico ico-cunsult"></i> <strong>{%html $item.data.priceLevelText %}</strong></div>
+            {%/if%}
+        </div>
+        <div class="col-xs-3 doc-request">
+            
+            <div class="reviews">${ $item.data.doctorRatingCount }</div>
+            <div class="clearfix"></div>
+            <a class="btn btn-success showScheduleBtn pull-right"  href="#scheldModal">Записаться онлайн</a>  
+        </div>
+</section>

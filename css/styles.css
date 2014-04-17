@@ -1,0 +1,58 @@
+/* line 317, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003317}}
+#paging {
+  position: fixed;
+  bottom: 0;
+  width: 720px;
+  text-align: center;
+  height: 32px;
+}
+/* line 318, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003318}}
+#paging ul {
+  padding: 0;
+  margin: 0;
+  display: inline;
+  width: 100%;
+  text-align: justify;
+}
+/* line 319, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003319}}
+#paging ul li {
+  display: inline;
+}
+/* line 319, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003319}}
+#paging ul li > a,
+#paging ul li span {
+  display: inline-block;
+  color: #0ea646 !important;
+  padding: 6px 12px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+  margin-left: -1px;
+}
+/* line 321, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003321}}
+#paging ul li > a:hover,
+#paging ul li span:hover,
+#paging ul li > a:focus,
+#paging ul li span:focus {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+/* line 323, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003323}}
+#paging ul li span {
+  display: inline-block;
+  background-color: #f7f7f7;
+}
+/* line 327, /home/semen/Documents/www/doctu.ru/widgets/2gis/css/styles.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/semen\/Documents\/www\/doctu\.ru\/widgets\/2gis\/css\/styles\.less}line{font-family:\00003327}}
+#paging span.close-pagination {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+}
